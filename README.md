@@ -31,5 +31,5 @@ In this step, we query the data and output the results to show stats on some dev
 
 We then create a Databricks job to automate the execution of both data_explore and data_processing notebooks, creating an automated pipeline.
 
-![job](pics/job.png)
-![jobs](pics/jobs.png)
+![job](pics/job.PNG)
+![jobs](pics/jobs.PNG)
