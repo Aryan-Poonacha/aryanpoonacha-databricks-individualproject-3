@@ -1,3 +1,7 @@
+# IDS 706 - Individual Project 3
+
+In this project, we expand upon the pipeline created in miniproject 11 to create complex data ETL and finally complex visualizations that are able to communicate key data insights in an automated data pipeline with an automatic trigger.
+
 # Databricks Data Pipeline
 
 In this project we create a data pipeline with Databricks. This pipeline integrates data sources and destinations, loading, processing and querying the data in the pipeline effectively.
@@ -16,20 +20,29 @@ The steps carried out to execute this project are:
 ### Cluster Creation
 We create a databricks cluster as the basis for our data pipeline.
 
-### Explore Data
-We run commands from Databricks CLI and PySpark in a notebook to examine the source data. This is done in data_explore.
+### Extract Data
 
-### Read And Process Data
+The data_extract notebook contains the script to extract the appropriate dataset from the databricks example datasets.
 
-In this step, the raw data is loaded into a table, and then processed to keep relevant information. This takes place in the first few cells of the data_processing notebook.
+### Transform And Load Data
 
-### Querying Data
+This is a simple SQL query that creates a processed table that contains appropriate transformations from the extracted data.
 
-In this step, we query the data and output the results to show stats on some devices.
+### Querying And Visualizing Data
+
+In this step, we query the data and output the results to show stats on some devices. We then create an appropriate visualization using a complex query.
+
+![query](pics/viz.png)
 
 ### Databricks Job
 
-We then create a Databricks job to automate the execution of both data_explore and data_processing notebooks, creating an automated pipeline.
+We then create a Databricks job to automate the execution of all three steps - data_extract, data_transformload and data_queryandvisualize, creating an automated pipeline.
 
 ![job](pics/job.PNG)
-![jobs](pics/jobs.PNG)
+![run](pics/run.PNG)
+
+### Scheduled Run Trigger
+
+We make a specific trigger in databricks so that the data pipeline auto runs at a fixed interval, ensuring that the newest data is used for each pipeline run.
+
+![run](pics/trigger.PNG)
