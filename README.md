@@ -32,7 +32,21 @@ This is a simple SQL query that creates a processed table that contains appropri
 
 In this step, we query the data and output the results to show stats on some devices. We then create an appropriate visualization using a complex query.
 
+#### Query and Visualization Interpetation And Analysis
+
+**Data Querying:** The code begins by querying data from the `processed_iot_data` table. It selects the `device_name`, and the average `temp` and `humidity` for each device. The query is more selective by including only devices where the `lcd` is 'red' and the country (`cn`) is "United States". 
+
+**Data Validation:** After querying the data, it checks if any rows were returned. If no rows were returned, it prints “No data queried”. If rows were returned, it prints the number of rows available.
+
+**Data Conversion:** The queried data is then converted to a Pandas DataFrame for easier manipulation and visualization.
+
+**Data Visualization:** Finally, the code creates a bar plot of the average humidity for each device. The x-axis represents the device names and the y-axis represents the average humidity. The plot is saved as ‘avg_humidity.png’.
+
 ![query](pics/viz.png)
+
+The visualization is a bar plot showing the average humidity for each device. The devices are ordered by their average humidity. This visualization allows you to quickly compare the average humidity across different devices. Devices with higher average humidity have taller bars, while devices with lower average humidity have shorter bars. This can help you identify which devices tend to operate in more humid environments.
+
+From the visualization, we can clearly see that in the class of devices subsetted to, there is a clear discrepancy in average humidity between these 2 device groups. this is a valuable insight that we have extracted using this query and subsequent visualization of the data.
 
 ### Databricks Job
 
