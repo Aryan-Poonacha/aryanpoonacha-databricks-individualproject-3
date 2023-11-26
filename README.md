@@ -60,3 +60,21 @@ We then create a Databricks job to automate the execution of all three steps - d
 We make a specific trigger in databricks so that the data pipeline auto runs at a fixed interval, ensuring that the newest data is used for each pipeline run.
 
 ![run](pics/trigger.PNG)
+
+## Conclusion and Recommendation
+
+Based on the results of the data analysis, we recommend that the management team take into account the average humidity levels of the devices when making decisions about device deployment and maintenance. Devices operating in more humid environments may require more frequent maintenance or replacement. This recommendation is actionable and can help improve the efficiency and longevity of the devices.
+
+## Running the Program
+
+To run the program, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Navigate to the directory containing the project.
+3. Open the Databricks workspace and import the notebooks.
+4. Create a Databricks cluster and attach the notebooks to the cluster.
+5. Run the notebooks in the following order: data_extract, data_transformload, data_queryandvisualize.
+6. View the results in the data_queryandvisualize notebook.
+7. If you want to similarly schedule a trigger, create a job that runs all 3 notebooks and schedule the job to run every so often.
+
+Please ensure that you have the necessary permissions and resources to create and run Databricks clusters.
